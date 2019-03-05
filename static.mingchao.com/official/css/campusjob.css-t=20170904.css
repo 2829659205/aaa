@@ -1,0 +1,263 @@
+#weixin_box .inner_list{text-align:center;width:215px;height:235px;background:url("../images/pcontent3.png")/*tpa=http://static.mingchao.com/official/images/pcontent3.png*/ repeat-y}
+
+#campus-banner img{
+        width:100%;
+    }
+    #campus_nav{
+        background-image:url("../images/campus/title.jpg")/*tpa=http://static.mingchao.com/official/images/campus/title.jpg*/;
+        width: 980px;
+        height: 28px;
+        margin-bottom:40px;
+    }
+    .c_left{
+        width:200px;
+        height:600px;
+        float:left;
+    }
+    .c_right{
+        width:780px;
+        float:left;
+        margin-bottom:50px;
+    }
+    #campus_menu li{
+         background-image:url("../images/campus/schoolnav.png")/*tpa=http://static.mingchao.com/official/images/campus/schoolnav.png*/;
+         width:166px;
+         height:29px;
+         float:left;
+         margin-bottom:8px;
+         cursor:pointer;
+    }
+
+    #campus_menu li:hover,#campus_menu .active{
+         background-image:url("../images/campus/schoolnav_hover.png")/*tpa=http://static.mingchao.com/official/images/campus/schoolnav_hover.png*/;
+    }
+
+     #campus_menu span,#campus_menu  li,#campus_menu a{
+            color: #fff;
+            float:left;
+            width:156px;
+            line-height: 1.5em;
+            font-size: 18px;
+            font-weight: 500;
+            text-align: left;
+            padding-left:5px;
+      }
+
+      .campus_cat{
+          width:100%;
+          height:40px;
+          background-color:#4b4b4b;
+      }
+
+      .campus_cat span,.campus_cat a, .campus_navmenu, .campus_navmenu:link, .cat span{
+          float:left;
+          text-align: center;
+          line-height: 2.5em;
+          cursor:pointer;
+          font-size:16px;
+          color: #FFF;
+          padding: 0 20px;
+      }
+      .campus_navmenu:hover,.campus_cat .active,.cat span:hover{
+           background-image:url("../images/hover.png")/*tpa=http://static.mingchao.com/official/images/hover.png*/;
+           color:#fff;
+           text-decoration: none;
+      }
+
+      .campus_job{
+          width:100%;
+          margin-top:15px;
+          color:#4b4b4b;
+      }
+      .campus_job p{
+          line-height:1.8em;
+          font-size:14px;
+
+
+      }
+      .campus_job .page{
+          text-indent:2em;
+      }
+      .campus_job .title{
+          text-align:center;
+      }
+      .campus_job h5{
+          font-size:16px;
+          color:#000;
+          font-weight:600;
+          line-height:3em;;
+      }
+      .campus_job_box{
+          float:left;
+          padding:5px;
+          text-align: center;
+          line-height: 2em;
+
+      }
+      .campus_job_category {
+          font-size: 20px;
+          line-height: 2.5em;
+      }
+      .campus_jobs_list span{
+          color:#4b4b4b;
+          cursor:pointer;
+      }
+       .campus_jobs_list span:hover{
+          color:#69ABE7;
+          cursor:pointer;
+      }
+      .campus_job_category span{
+          font-weight:600;
+          text-decoration: none;
+      }
+       .campus_job_category a:hover{
+          color:#000;
+      }
+      .dblue{
+          color:#69ABE7;
+      }
+      .yellow{
+          color:#B7D42E;
+      }
+      .green{
+          color:#FAD103;
+      }
+      .orange{
+          color:#FF8921;
+      }
+      .blue{
+          color:#89D5F9;
+      }
+      #campuskv{
+          text-align:center; width:100%;height:296px; background-position:center 0;background-color: #fff;}
+      #pro_word,#faq_word{
+          margin-top:30px;
+      }
+      #pro_word p{
+          color:#000;
+          line-height:1.5em;
+      }
+      #faq_word p{
+          color:#000;
+          line-height:2em;
+      }
+      #trip_table{
+          width:760px;
+          border-collapse: collapse;
+          border-spacing: 0px;
+          margin: 0 10px;
+      }
+      #trip_table tr th,#trip_table tr td{
+         font-size:16px;
+          text-align:center;
+          padding:5px;
+          border:1px solid #4b4b4b;
+      }
+      #trip_table tr th{
+          color:#fff;
+      }
+      #trip_table tr td{
+          color:#4b4b4b;
+      }
+      #trip_table_head{
+          background-color:#00A1FD;
+      }
+      #trip_word{
+          margin:20px 10px;
+      }
+     #trip_word p{
+         color:#4b4b4b;
+     }
+    .proc_title{
+        color:#00A1FD;
+        font-size:20px;
+    }
+    hr{
+        border:1px #cccccc dashed;
+    }
+    .s_right{
+        color:#4b4b4b;
+    }
+    #apply_btn{
+        float:left;
+        width:100%;
+        text-align:center;
+        margin-top:20px;
+        color:#02A1FD;
+        font-size:20px;
+        font-weight:600;
+    }
+    #apply_mail{
+        float:left;
+        width:100%;
+        height: 50px;
+        text-align:left;
+        margin-top:20px;
+        color:#02A1FD;
+        font-size:15px;
+        font-weight:600;
+    }
+
+    .job-side-menu{
+        width:160px;
+        float: left;
+        margin-right:20px ;
+    }
+    .job-col{
+        width:600px;
+        float: left;
+        color: #535456;
+    }
+    .job-col p {
+        line-height: 25px;
+        padding-left: 10px;
+    }
+    .job-cat{
+        border: 1px solid #535456;
+        border-radius: 7px;
+        text-align: center;
+        line-height: 2em;
+        display: inline-block;
+        width: 140px;
+        margin: 10px 0px;
+        color:#535456;
+        cursor: pointer;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        padding: 0px 5px;
+    }
+    .job-cat:hover,.job-side-menu .on{
+        text-decoration: none;
+        border: 1px solid #1483d8;
+        background-color:#1483d8;
+        color:#fff !important;
+        cursor: pointer;
+    }
+.wx_img{
+    margin-left: 5px;
+}
+.wx-text{
+    width: 138px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 14px; font-family: 微软雅黑;
+    color:#535456;
+}
+/*----------- 图片banner特效左右滚动 ------------*/
+/* w_ctr */
+#campus-banner li img{
+    position:absolute;
+    top:160px;
+}
+
+/*工作申请表颜色*/
+
+.job-apply-table tr td span {
+    font-size: 14px;
+}
+
+.optionname{
+    padding-top: 10px !important;
+    width: inherit;
+}

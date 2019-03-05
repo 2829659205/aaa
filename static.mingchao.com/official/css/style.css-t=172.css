@@ -1,0 +1,978 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+/*全局*/
+html {
+    overflow: -moz-scrollbars-vertical;
+}
+body {
+    font-family: "微软雅黑", "宋体", arial;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    color: #d2d2d2;
+    width: 100%;
+    background-image: url("../images/f_bg.gif")/*tpa=http://static.mingchao.com/official/images/f_bg.gif*/;
+    background-repeat: repeat-x;
+}
+div, form, img, ul, ol, li, dl, dt, dd, em, p {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-style: normal;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+table, td, tr, th {
+    font-size: 12px;
+}
+input {
+}
+.container {
+    width: 100%;
+    background-image: url("../images/index_bg.jpg")/*tpa=http://static.mingchao.com/official/images/index_bg.jpg*/;
+}
+.container_page {
+    width: 980px;
+    margin: 0 auto;
+    margin-top: 30px;
+    font-family: "微软雅黑";
+}
+.clear {
+    clear: both;
+}
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+a:link {
+    text-decoration: none;
+    color: #6d6d6d;
+}
+a:visited {
+    text-decoration: none;
+    color: #6d6d6d;
+}
+a:hover {
+    text-decoration: none;
+    color: #f60;
+    text-decoration: underline;
+}
+a:active {
+    text-decoration: none;
+    color: #f3c217;
+}
+
+/*字色*/
+.content {
+    padding: 10px 0;
+}
+.fadeIn {
+    opacity: 0.6;
+    margin-top: 0px;
+}
+.fadeOut {
+    opacity: 1;
+    margin-top: -10px;
+}
+
+/* ~~ 脚注 ~~ */
+
+/* ~~ 其它浮动/清除类 ~~ */
+.fltrt {
+
+    /* 此类可用于在页面中使元素向右浮动。浮动元素必须位于其在页面上的相邻元素之前。 */
+    float: right;
+    margin-left: 8px;
+}
+.fltlft {
+
+    /* 此类可用于在页面中使元素向左浮动。浮动元素必须位于其在页面上的相邻元素之前。 */
+    float: left;
+    margin-right: 8px;
+}
+.clearfloat {
+
+    /* 如果从 #container 中删除或移出了 #footer，则可以将此类放置在 <br /> 或空 div 中，作为 #container 内最后一个浮动 div 之后的最终元素 */
+    clear: both;
+    height: 0;
+    font-size: 1px;
+    line-height: 0px;
+}
+
+/*flash*/
+.f1 {
+    color: #4691b9
+}
+
+/*头部*/
+#header {
+    width: 980px;
+    height: 68px;
+    margin: 0 auto;
+    background: #fff;
+}
+#header #logo {
+    width: 465px;
+    height: 68px;
+    margin-top: 0px;
+    float: left;
+}
+
+/*right*/
+#header .snav {
+    width: 450px;
+    line-height: 30px;
+    float: right;
+    text-align: right;
+    padding: 27px 0 0;
+    color: #8a8989
+}
+#header .snav a {
+    padding: 0 10px;
+    color: #c5c5c5
+}
+
+/*导航*/
+
+/*topmenu*/
+.topmenu_bg {
+    width: 100%;
+    height: 94px;
+    background: url("../images/nav_li_bg.jpg")/*tpa=http://static.mingchao.com/official/images/nav_li_bg.jpg*/ repeat-x;
+    font-family: "微软雅黑";
+    font-size: 16px;
+    font-weight: normal;
+}
+.topmenu {
+    width: 980px;
+    margin: 0 auto;
+    height: 54px;
+    position: relative;
+    left: 0px;
+    top: 0px;
+}
+.topmenu .nav_content {
+    width: 1120px;
+    margin: 0 auto;
+    float: left;
+    margin-left: -30px;
+}
+.topmenu .nav_content ul .nav-first-li {
+    width: 126px;
+    height: 54px;
+    float: left;
+    line-height: 54px;
+    text-align: center;
+    font-weight: bold;
+}
+.topmenu .nav_content ul .nav-first-li .nav-link a {
+    color: #fff;
+    width: 126px;
+    height: 54px;
+    display: block;
+}
+.topmenu .nav_content ul .nav-first-li .current a {
+    width: 126px;
+    height: 54px;
+    line-height: 54px;
+    display: block;
+}
+.topmenu .nav_content ul .nav-first-li .current a:hover {
+    line-height: 54px;
+}
+.topmenu .nav_content ul .nav-first-li .nav-link a:hover {
+    line-height: 54px;
+    text-decoration: none;
+    background: url("../images/nav_li_hover.jpg")/*tpa=http://static.mingchao.com/official/images/nav_li_hover.jpg*/ no-repeat;
+    color: #000;
+}
+
+/*submenu*/
+.submenu {
+    visibility: hidden;
+    font-weight: normal;
+    background: url("../images/sub_li.jpg")/*tpa=http://static.mingchao.com/official/images/sub_li.jpg*/ repeat-x;
+}
+.submenu ul {
+    margin-left: 18px;
+    width: 360px;
+}
+.submenu ul .nav-second-li {
+    display: inline;
+    float: left;
+}
+.submenu_main {
+    width: 100%;
+    background-color: #03C;
+    font-size: 15px;
+}
+.submenu .subnav {
+    padding-left: 0px;
+    float: left;
+}
+.submenu .subnav .nav-second-li {
+    height: 40px;
+    float: left;
+}
+.submenu .subnav .nav-second-li a {
+    color: #333;
+    display: block;
+    padding: 0 12px;
+    line-height: 40px;
+    text-decoration: none;
+}
+.submenu .subnav .nav-second-li a:hover {
+    color: #0a4aaa;
+    text-decoration: none;
+}
+.submenu .subnav .nav-second-li.subright {
+    width: 33px;
+    height: 40px;
+}
+
+/*三级导航*/
+#Layer8 .subnav {
+    margin-left: -45px;
+    width: 220px;
+}
+#Layer8 .subnav ul {
+    width: 100%;
+}
+.thirdnav {
+    z-index: 99;
+}
+.thirdnav ul {
+    background-color: #FFFFFF;
+    width: auto;
+}
+.thirdnav ul li {
+    height: 30px;
+    line-height: 30px;
+}
+.thirdnav ul li a {
+    background-repeat: no-repeat;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+.thirdnav a:hover {
+    color: #0a4aaa;
+    text-decoration: none;
+}
+#thirdnav1 {
+    position: absolute;
+    width: 110px;
+    height: 150px;
+    margin-left: -11px;
+}
+#thirdnav2 {
+    position: absolute;
+    width: 110px;
+    height: 150px;
+    margin-left: 78px;
+}
+
+/*主体*/
+.flash {
+    width: 980px;
+    margin: 0 auto;
+    overflow: visible;
+    position: relative;
+}
+#flash {
+    width: 1680px;
+    height: 437px;
+    overflow: visible;
+    position: relative;
+    left: -350px;
+    _position: absolute;
+}
+.main {
+    width: 980px;
+    margin: 0 auto;
+    height: 328px;
+}
+.main a {
+    color: #d2d2d2;
+}
+.game {
+    width: 980px;
+    height: 122px;
+}
+.game_pic {
+    width: 980px;
+    height: 122px;
+    float: left;
+}
+.game_pic img {
+    margin: 20px 0px 20px 12.5px;
+    filter: BlendTrans(duration=1);
+    border: none;
+}
+#game_pic_left {
+    margin: 20px 0px;
+}
+.gbanner {
+    width: 147px;
+    height: 85px;
+    margin: 3px 18.5px;
+}
+.newspass ul li a {
+    max-width: 280px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+}
+.left {
+    width: 313px;
+    height: 206px;
+    float: left;
+    background-image: url("../images/index_about.jpg")/*tpa=http://static.mingchao.com/official/images/index_about.jpg*/
+}
+.center {
+    width: 346px;
+    height: 206px;
+    float: left;
+    overflow: hidden;
+    background-image: url("../images/index_news.jpg")/*tpa=http://static.mingchao.com/official/images/index_news.jpg*/
+}
+.right {
+    width: 320px;
+    height: 206px;
+    float: left;
+    overflow: hidden;
+    background-image: url("../images/index_jobs_bak.jpg")/*tpa=http://static.mingchao.com/official/images/index_jobs_bak.jpg*/
+}
+#blue {
+    color: #06C;
+}
+#blues {
+    font-family: "微软雅黑";
+    font-size: 16px;
+    color: #06C;
+}
+.left_nav_2 a:hover, .left_nav_2 #blue:hover {
+    background-color: #0669D1;
+    color: #fff;
+    text-decoration: none;
+    padding: 2px 5px;
+}
+.left_nav_2 a, .left_nav_2 #blue {
+    border-radius: 3px;
+}
+
+/*more*/
+.more {
+    float: right;
+    font-size: 14px;
+    width: 250px;
+    height: 20px;
+    margin: 15px 35px 0px 0px;
+    display: inline
+}
+.more p {
+    text-align: right;
+    color: #f7ce40;
+    font-size: 12px;
+}
+.more a {
+    color: #f7ce40;
+    font-size: 12px;
+}
+
+/*公司简介*/
+#about {
+    width: 250px;
+    height: 100px;
+    padding: 60px 30px 0px 20px;    /*ff的属性*/
+    font-size: 14px;
+}
+#about p {
+    overflow: hidden;
+    margin: 5px 0;
+    line-height: 25px;
+}
+
+/*新闻动态*/
+#news {
+    width: 300px;
+    height: 100px;
+    padding: 60px 2px 0 18px;       /*ff的属性*/
+    font-size: 14px;
+}
+#news ul {
+    padding: 0;
+}
+#news ul li {
+    line-height: 30px;
+}
+
+/*招聘*/
+#job {
+    width: 280px;
+    height: 100px;
+    padding: 60px 5px 0 35px; /*ff的属性*/
+
+    /*IE6/7的属性*/
+    font-size: 14px;
+}
+#job ul {
+}
+#job ul LI {
+    line-height: 30px;
+    float: left;
+    display: inherit;
+    width: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+}
+
+/*底部*/
+#footer {
+    margin: 0;
+    color: #a0b1bb;
+    background: #FFF;
+    padding: 20px 0;
+    font-size: 12px;
+}
+#footer a {
+    color: #a0b1bb
+}
+#footer ul {
+    text-align: center;
+}
+#footer li {
+    margin-top: 10px;
+    height: 18px;
+    line-height: 18px;
+}
+#footer li a {
+    padding: 0 10px;
+}
+
+/* style */
+#kv_button {
+    position: absolute;
+    top: 360px;
+    width: 180px;
+    left: 50%;
+    margin-left: -450px;
+    z-index: 999999;
+}
+#kv_button ul {
+    list-style: none;
+    float: left;
+    width: 600px;
+}
+#kv_button li {
+    cursor: pointer;
+    float: left;
+    height: 45px;
+    margin-right: 3px;
+    width: 75px;
+    border: 1px solid #035594;
+}
+#kv_button li.no {
+    cursor: pointer;
+    float: left;
+    height: 45px;
+    margin-right: 3px;
+    width: 75px;
+    border: 1px solid #02284f;
+}
+#kv_button li a {
+    color: #6297cd;
+    background: url("vi_kvbutton_normal.gif")/*tpa=http://static.mingchao.com/official/css/vi_kvbutton_normal.gif*/ no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 19px;
+    text-align: center;
+    line-height: 19px;
+    text-decoration: none;
+}
+#kv_button li a:hover {
+    background-image: url("vi_kvbutton_on.gif")/*tpa=http://static.mingchao.com/official/css/vi_kvbutton_on.gif*/;
+    color: #6297cd;
+}
+#kv_button li.no a {
+    background-image: url("vi_kvbutton_on.gif")/*tpa=http://static.mingchao.com/official/css/vi_kvbutton_on.gif*/;
+    color: #6297cd;
+}
+.mainbnt {
+    height: 437px;
+    position: absolute;
+    top: 163px;
+    width: 100%;
+    z-index: 1;
+    left: 0;
+}
+.mainbnt a {
+    display: block;
+    height: 437px;
+}
+#mainkv {
+    text-align: center;
+    height: 437px;
+    background-position: center 0;
+    background-color: #fff;
+}
+#job_logo {
+    background: url("../images/job_logo.jpg")/*tpa=http://static.mingchao.com/official/images/job_logo.jpg*/ no-repeat center center rgba(0, 0, 0, 0);
+    min-width: 1024px;
+    width: 100%;
+    overflow-x: hidden;
+    text-align: center;
+}
+img {
+    border: 0;
+    margin: 0;
+}
+#slid {
+    width: 1680px;
+    padding: 1px;
+    font-size: 12px;
+    color: #666;
+}
+#slid a {
+    color: #666;
+}
+#slid a:visted {
+    color: #999;
+}
+#box {
+    width: 1680px;
+    height: 437px;
+    border: 1px #666 solid;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+#pic {
+    width: auto;
+    float: left;
+    left: 0px;
+    height: 437px;
+}
+.pics {
+    width: 1680px;
+    height: 437px;
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: top;
+    zoom: 1;
+    *display: inline;
+    overflow: hidden;
+}
+
+/*page主体*/
+.f_left {
+    background-image: url("../images/date_05.gif")/*tpa=http://static.mingchao.com/official/images/date_05.gif*/;
+    width: 177px;
+    height: 600px;
+    float: left;
+}
+.f_right {
+    background-image: url("../images/date_06.jpg")/*tpa=http://static.mingchao.com/official/images/date_06.jpg*/;
+    background-repeat: no-repeat;
+    width: 803px;
+    float: left;
+    margin-bottom: 50px;
+}
+.left_title {
+    padding: 16px 0px 0px 30px;
+    font-size: 24px;
+    color: #06C;
+}
+.left_nav_1 {
+    margin: 20px 0px 0px 30px;
+}
+.left_nav_1 li {
+    background-image: url("../images/li_nav_bg.gif")/*tpa=http://static.mingchao.com/official/images/li_nav_bg.gif*/;
+    background-repeat: no-repeat;
+    padding-left: 22px;
+    font-size: 18px;
+    height: 18px;
+    line-height: 18px;
+    margin-bottom: 20px;
+}
+.left_nav_2 {
+    margin: 20px 0px 0px 30px;
+}
+.left_nav_2 li {
+    background-repeat: no-repeat;
+    padding-left: 22px;
+    font-size: 16px;
+    height: 18px;
+    line-height: 18px;
+    margin-bottom: 20px;
+}
+.left_nav_3 {
+    margin: 20px 0px 0px 30px;
+}
+.left_nav_3 li {
+    background-repeat: no-repeat;
+    padding-left: 15px;
+    font-size: 12px;
+    height: 18px;
+    line-height: 10px;
+    margin-bottom: 20px;
+}
+.right_top_nav {
+    float: right;
+    margin-right: 20px;
+    font-size: 12px;
+}
+.right_top {
+    float: left;
+    margin: 60px 0 0 26px;
+    font-size: 18px;
+    color: #06C;
+}
+.right_top_title {
+    position: absolute;
+    right: 50%;
+    margin-right: -430px;
+    top: 305px;
+    font-size: 16px;
+    font-style: italic;
+}
+.f_main {
+    width: 716px;
+    height: auto;
+    margin-left: 26px;
+    margin-top: 15px;
+    color: #535456;
+}
+.f_main_box {
+    width: 716px;
+    height: auto;
+    color: #535456;
+}
+.hot_class {
+    padding: 0 0 6px 3px;
+}
+.top_link {
+    max-width: 200px;
+}
+.Abox {
+    width: 716px;
+    margin-left: 30px;
+    height: auto;
+    color: #535456;
+    clear: right;
+}
+.Abox p {
+    line-height: 25px;
+}
+.box {
+    width: 716px;
+    height: auto;
+    color: #535456;
+}
+.f_main p {
+    line-height: 25px;
+}
+.f_main img {
+    max-width: 700px;
+}
+.f_main hr {
+    size: 0.2px;
+    color: #CCC;
+}
+.f_main table tr td {
+    border-bottom: 1px solid #ccc;
+}
+.f_main table tr th {
+    border-bottom: 1px solid #ccc;
+}
+#table_nounderline td {
+    border-bottom: 0px;
+}
+.acrticle {
+    width: 450px;
+    margin-left: 250px;
+}
+
+/*新闻列表*/
+#list_content {
+    padding: 10px;
+    margin-top: 10px;
+}
+#list_content ul {
+}
+#list_content ul li {
+    line-height: 2.6em;
+    height: 30px;
+    padding-left: 15px;
+    padding-right: 5px;
+    line-height: 30px;
+    color: #666;
+    font-size: 14px;
+    background: url("../images/tri.gif")/*tpa=http://static.mingchao.com/official/images/tri.gif*/ 5px 13px no-repeat;
+    border-bottom: 1px dashed #d1dced;
+}
+#list_content ul li span {
+    float: right;
+    font-size: 14px;
+    font-weight: normal;
+    color: #242323;
+}
+#list_content ul li a {
+    font-size: 14px;
+    font-weight: normal;
+    color: #242323;
+}
+#list_content ul li a:hover {
+    color: #F60;
+}
+#list_content ul li em {
+
+    /*float:right;*/ margin: 0 20px;
+    color: #535456;
+}
+#list_content ul li a {
+    font-size: 14px;
+}
+
+/*分页*/
+#page {
+    margin: 20px 0 0;
+    padding: 0 0 0 180px;
+    clear: both;
+    height: 25px;
+    line-height: 25px;
+    text-align: center
+}
+#page a {
+    border: 1px solid #ececec;
+    float: left;
+    display: block;
+    padding: 0 8px;
+    margin: 0 1px
+}
+
+/*网站地图页*/
+.pcontent .maps {
+    border-bottom: 1px dashed  #CCC;
+    line-height: 80px;
+}
+.pcontent .maps  a {
+    color: #006691;
+    font-size: 16px;
+    font-weight: bold;
+    height: 30px;
+    line-height: 30px;
+}
+.f6 {
+    clear: both;
+    overflow: hidden;
+    width: 100%;
+    width: 770px;
+    padding: 5px 0 10px;
+}
+.f6 li {
+    float: left;
+    line-height: 30px;
+    padding: 8px 20px 0 0;
+    white-space: nowrap;
+    list-style-type: none;
+    font-size: 14px;
+}
+
+/*底部*/
+#footer {
+    margin: 0;
+    color: #a0b1bb;
+    background-image: url("../images/footer_l.gif")/*tpa=http://static.mingchao.com/official/images/footer_l.gif*/;
+    background-repeat: repeat-x;
+    padding: 20px 0;
+    font-size: 12px;
+    position: absolute;
+    width: 100%;
+}
+#footer a {
+    color: #a0b1bb
+}
+#footer ul {
+    text-align: center;
+}
+#footer li {
+    margin-top: 10px;
+    height: 18px;
+    line-height: 18px;
+}
+#footer li a {
+    padding: 0 10px;
+}
+#job_logo {
+
+    /*background: url("http://static.mingchao.com/official/images/job_logo.jpg") no-repeat scroll center center rgba(0, 0, 0, 0);*/
+    min-width: 1024px;
+    width: 100%;
+    height: 437px;
+}
+
+/*分页*/
+#page {
+    float: left;
+}
+#page-index {
+    margin: 10px auto;
+    float: right
+}
+#page-index li {
+    display: inline;
+}
+#page-index li a, .disabled {
+    float: left;
+    padding: 0 10px;
+    margin-left: 8px;
+    height: 25px;
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    color: #666666;
+    font-size: 14px;
+    font-family: Arial;
+    line-height: 25px;
+    font-family: "微软雅黑" !important
+}
+#page-index li a:hover, #page-index li.hover a {
+    border: 1px solid #06C;
+    background: #06C;
+    color: #FFFFFF !important;
+    cursor: pointer;
+}
+#page-jump {
+    float: right;
+    height: 25px;
+    line-height: 25px;
+    margin: 10px auto;
+    font-size: 14px;
+    width: 300px;
+}
+#page-jump input {
+    border: 1px solid #DDDDDD;
+    margin: 0 5px;
+    width: 40px;
+    padding: 5px 0;
+}
+#page-jump #page-btu {
+    height: 25px;
+    border: 1px solid #CCCCCC;
+    width: 60px;
+    float: right;
+    cursor: pointer;
+    margin-left: 8px;
+    text-align: center;
+    line-height: 25px;
+}
+#page-jump #page-jump-btu {
+    height: 25px;
+    border: 1px solid #CCCCCC;
+    width: 60px;
+    float: right;
+    cursor: pointer;
+    margin-left: 8px;
+    text-align: center;
+    line-height: 25px;
+}
+
+/*招聘*/
+.jobtab {
+    width: 735px;
+    float: left;
+}
+.jobtype {
+    padding: 20px 10px;
+    float: left;
+    width: 735px;
+    border-bottom: 1px solid #CCC;
+}
+.jobtype_name {
+    float: left;
+    height: 102px;
+    width: 114px;
+}
+.job_name {
+    float: left;
+    width: 621px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.job_name li {
+    float: left;
+    width: 207px;
+    padding-bottom: 5px;
+}
+#nav_new {
+    margin-left: 85px;
+    margin-top: -48px;
+    line-height: 0px;
+}
+
+/*#nav_new img{width:35px;}*/
+
+/*微信公众平台*/
+#cleft_box {
+    left: 50%;
+    margin-left: 260px;
+    position: relative;
+    display: none;
+    bottom: 290px;
+    z-index: 9999;
+    text-align: center;
+    width: 128px;
+    height: 185px;
+    background: url("../images/contentbg.png")/*tpa=http://static.mingchao.com/official/images/contentbg.png*/;
+}
+#weixin_box {
+    position: fixed;
+    right: 0px;
+    bottom: 30%;
+    padding: 0px;
+    margin: 0px;
+    width: 255px;
+    z-index: 999999;
+    height: 235px;
+}
+.cleft_inner {
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    width: 255px
+}
+#inner_btn {
+    margin-top: 50px;
+    width: 36px;
+    height: 74px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    cursor: pointer;
+    float: left;
+    background: url("../images/rtitleico-close.png")/*tpa=http://static.mingchao.com/official/images/rtitleico-close.png*/ left top no-repeat
+}
+.inner_btn span {
+    layout-flow: vertical-ideographic
+}
+.inner_info {
+    width: 215px;
+    overflow: hidden;
+    float: right;
+    background: none
+}
+.inner_list {
+    text-align: center;
+    width: 215px;
+    height: 235px;
+    background: url("../images/pcontent2.png")/*tpa=http://static.mingchao.com/official/images/pcontent2.png*/ repeat-y
+}

@@ -1,0 +1,211 @@
+<!--[if IE]>
+<!DOCTYPE html>
+<![endif]-->
+<html lang="zh-CN">
+	<head>
+		<meta charset=utf-8"utf-8">
+		<meta name="description" content="明朝互动校园招聘">
+		<meta name="keywords" content="明朝官网，广州，明朝，校园招聘">
+		<meta name="author" content="ligr190@mingchao.com">
+		<!-- 开启响应式模式 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- 让部分国产浏览器默认采用高速模式渲染页面 -->
+		<meta name="renderer" content="webkit">
+		<!-- 为了让IE浏览器运行最新的渲染模式 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- 清除浏览器中的缓存 -->
+		<meta http-equiv="Cache-Control" content="no-cache,no-store, must-revalidate">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		
+		<link rel="shortcut icon" href="http://static.mingchao.com/official/images/campus/favicon.ico">
+		<title>明朝互动</title>
+		<!--[if lt IE 9]>
+			<script src="../static.mingchao.com/official/js/ie8-responsive-file-warning.js" tppabs="http://static.mingchao.com/official/js/ie8-responsive-file-warning.js"></script>
+		<![endif]-->
+		<script src="../static.mingchao.com/official/js/ie-emulation-modes-warning.js" tppabs="http://static.mingchao.com/official/js/ie-emulation-modes-warning.js"></script>
+		<link href="../static.mingchao.com/official/css/bootstrap.min.css" tppabs="http://static.mingchao.com/official/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="../static.mingchao.com/official/bootstrap/css/bootstrap-datetimepicker.min.css" tppabs="http://static.mingchao.com/official/bootstrap/css/bootstrap-datetimepicker.min.css">
+		<link rel="stylesheet" href="../static.mingchao.com/official/css/messenger.css" tppabs="http://static.mingchao.com/official/css/messenger.css">
+		<link rel="stylesheet" href="../static.mingchao.com/official/css/messenger-theme-future.css" tppabs="http://static.mingchao.com/official/css/messenger-theme-future.css">
+		
+<link href="../static.mingchao.com/official/css/jobapply.css" tppabs="http://static.mingchao.com/official/css/jobapply.css" rel="stylesheet" type="text/css">
+
+
+
+		
+		
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="../cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js" tppabs="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+			<script src="../cdn.bootcss.com/respond.js/1.3.0/respond.min.js" tppabs="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
+		<![endif]-->
+	</head>
+<body>
+  	
+<div ng-app="mainApp" ng-controller="mainAppCtrl">
+	<div id="cleft_box">
+	<div class="cleft_inner">
+		<div id="inner_btn"><span></span></div>
+		<div class="inner_info">
+			<div class="inner_list">
+			</div>
+		</div>
+		</div>
+	</div>
+	
+	<div class="navbar navbar-default "  id="job-nav-top"  role="navigation">
+		<div class="container">
+				
+				<ul class="nav navbar-nav">
+					<li><a class="nav-brand" href="index.htm" tppabs="http://www.mingchao.com/"><img src="../static.mingchao.com/official/images/campus/logo2.png" tppabs="http://static.mingchao.com/official/images/campus/logo2.png"></a></li>
+				
+				</ul>
+		</div>
+	</div>
+	<div class="container">
+			<ol id="alert-top" class="breadcrumb">
+			  <li class="active"><a href="#">基本信息</a></li>
+			</ol>
+		<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<span class="glyphicon glyphicon-send"></span>  基本信息
+					</h3>
+				</div>
+				<div class="panel-body table-responsive">
+				<form class="form-horizontal w5c-form demo-form" role="form"
+	  w5c-form-validate="vm.validateOptions" novalidate name="validateForm">
+					  <div class="form-group">
+						<label  class="col-sm-2 control-label">姓名</label>
+						<div class="col-sm-4">
+						  <input required="" ng-pattern="/[\a-\z\A-\Z\u4E00-\u9FA5]/" ng-model="entity.username" class="form-control" name="username" placeholder="请输入您的姓名 " type="text" autocomplete="off">
+						</div>
+					  </div>
+					  <div class="form-group">
+						<label class="col-sm-2 control-label">身份证</label>
+						<div class="col-sm-4">
+					  	<input ng-keyup="keydown($event)" required="" ng-pattern="/^(\d{15}$|^\d{18}$|^\d{17}(\d|X|x))$/"  ng-model="entity.idcard" class="form-control"  name="idcard" placeholder="请输入您的身份证号码" autocomplete="off">
+						</div>
+					  </div>
+					  <div class="form-group"  >
+        <label class="col-sm-2 control-label"></label>
+
+        <div class="col-sm-4" ng-show="res.status==0">
+            <div class="alert alert-danger ng-binding" ng-bind="res.error"> </div>
+        </div>
+    </div>
+					  <div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<button type="buttom" w5c-form-submit="vm.saveEntity()" class="btn btn-success">下一步</button>
+						</div>
+					  </div>
+					</form>
+					
+					<h5 class="text-danger" style="border-bottom: 2px solid #EFEFEF;padding:5px;">温馨提示:</h5>
+					<span>1.感谢你对明朝的关注。</span><br>
+					<span>2.请按要求完成此份工作申请表，你所填写的内容将仅用于公司招聘。</span>
+				</div>
+		</div>
+	</div>
+</div>
+
+  	 <script src="../static.mingchao.com/official/js/jquery-1.10.2.min.js" tppabs="http://static.mingchao.com/official/js/jquery-1.10.2.min.js"></script>
+	<script src="../static.mingchao.com/official/bootstrap/js/bootstrap.min.js" tppabs="http://static.mingchao.com/official/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../static.mingchao.com/official/js/messenger.min.js" tppabs="http://static.mingchao.com/official/js/messenger.min.js"></script>
+	<script src="../static.mingchao.com/official/js/common2.js" tppabs="http://static.mingchao.com/official/js/common2.js"></script>
+	<script src="../static.mingchao.com/official/bootstrap/js/bootstrap-datetimepicker.min.js" tppabs="http://static.mingchao.com/official/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+	<script src="../static.mingchao.com/official/js/angular/angular.js" tppabs="http://static.mingchao.com/official/js/angular/angular.js"></script>
+	<script src="../static.mingchao.com/official/js/mcGrid/Mc.datetimepicker.js" tppabs="http://static.mingchao.com/official/js/mcGrid/Mc.datetimepicker.js"></script>
+	<script src="../static.mingchao.com/official/js/w5cValidator/js/angular-highlightjs.js" tppabs="http://static.mingchao.com/official/js/w5cValidator/js/angular-highlightjs.js"></script>
+	<script src="../static.mingchao.com/official/js/w5cValidator/js/highlight.pack.js" tppabs="http://static.mingchao.com/official/js/w5cValidator/js/highlight.pack.js"></script>
+	<script src="../static.mingchao.com/official/js/w5cValidator/js/w5cValidator.js" tppabs="http://static.mingchao.com/official/js/w5cValidator/js/w5cValidator.js"></script>
+	<script src="../static.mingchao.com/official/js/angular/checklist.model.js" tppabs="http://static.mingchao.com/official/js/angular/checklist.model.js"></script>
+	
+<script type="text/javascript"  src="../static.mingchao.com/official/js/ui-bootstrap-tpls-0.11.0.js" tppabs="http://static.mingchao.com/official/js/ui-bootstrap-tpls-0.11.0.js"></script>
+<script type="text/javascript">
+var mainApp = angular.module('mainApp', ["w5c.validator", "ui.bootstrap", "hljs"]);
+var PostUrl="api/JobApply.php-action=.htm"/*tpa=http://www.mingchao.com/api/JobApply.php?action=*/;
+mainApp.config(["w5cValidatorProvider", function (w5cValidatorProvider) {
+	//全局配置
+	w5cValidatorProvider.config({
+		blurTrig: false,
+		showError: true,
+		removeError: true
+	});
+
+	w5cValidatorProvider.setRules({
+		username: {
+		 required: "输入的用户名不能为空",
+		 pattern: "姓名必须为合法字符",
+		},
+		idcard: {
+		 required: "输入的身份证不能为空",
+		 pattern: "身份证必须为合法的中国公民身份证号码",
+		},
+	});
+}]);
+
+mainApp.factory('mainService', function( $http, $q ){
+	var service = {};
+	var angularPost = function( postData, url ) {
+		var deferred = $q.defer();
+		$http({
+			url: url,
+			method: "post",
+			data : $.param( postData ),
+			headers : { 'Content-Type' : 'application/x-www-form-urlencoded'},
+		}).success(function(json){
+			deferred.resolve(json);
+		});
+		return deferred.promise;
+	};
+	 //获取部门
+	
+	service.init = function( data ) {
+		return angularPost( data, PostUrl+"init" );
+	}
+	return service;
+});
+mainApp.controller("mainAppCtrl",function($http, $scope, mainService ) {
+	$scope.entity={};
+	$scope.sign=function(){
+	}
+	$scope.vm = {
+			showErrorType: 1
+	};
+
+	//
+	$scope.vm.saveEntity = function (form) {
+		$scope.res={};
+		mainService.init($scope.entity).then(function(json) {
+			console.log(json);
+			if(json.status==1){
+				showTips(json.msg);
+				window.location.href="job_apply.html"/*tpa=http://www.mingchao.com/job_apply.html*/;
+			}else{
+				$scope.res=json;
+			}
+		});
+	};
+
+    $scope.keydown = function ($event) {
+        if($event.keyCode == 13){
+            $scope.vm.saveEntity();
+        }
+    }
+
+		//每个表单的配置，如果不设置，默认和全局配置相同
+	$scope.vm.validateOptions = {
+			blurTrig: true
+	};
+
+
+		
+});
+		 
+</script>
+	
+</body>
+</html>

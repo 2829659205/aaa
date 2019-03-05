@@ -1,0 +1,909 @@
+<!--[if IE]>
+<!DOCTYPE html>
+<![endif]-->
+<html lang="zh-CN">
+	<head>
+		<meta charset=utf-8"utf-8">
+		<meta name="description" content="明朝互动校园招聘">
+		<meta name="keywords" content="明朝官网，广州，明朝，校园招聘">
+		<meta name="author" content="ligr190@mingchao.com">
+		<!-- 开启响应式模式 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- 让部分国产浏览器默认采用高速模式渲染页面 -->
+		<meta name="renderer" content="webkit">
+		<!-- 为了让IE浏览器运行最新的渲染模式 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- 清除浏览器中的缓存 -->
+		<meta http-equiv="Cache-Control" content="no-cache,no-store, must-revalidate">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		
+		<link rel="shortcut icon" href="http://static.mingchao.com/official/images/campus/favicon.ico">
+		<title>明朝互动</title>
+		<!--[if lt IE 9]>
+			<script src="../static.mingchao.com/official/js/ie8-responsive-file-warning.js" tppabs="http://static.mingchao.com/official/js/ie8-responsive-file-warning.js"></script>
+		<![endif]-->
+		<script src="../static.mingchao.com/official/js/ie-emulation-modes-warning.js" tppabs="http://static.mingchao.com/official/js/ie-emulation-modes-warning.js"></script>
+		<link href="../static.mingchao.com/official/css/bootstrap.min.css" tppabs="http://static.mingchao.com/official/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="../static.mingchao.com/official/bootstrap/css/bootstrap-datetimepicker.min.css" tppabs="http://static.mingchao.com/official/bootstrap/css/bootstrap-datetimepicker.min.css">
+		<link rel="stylesheet" href="../static.mingchao.com/official/css/messenger.css" tppabs="http://static.mingchao.com/official/css/messenger.css">
+		<link rel="stylesheet" href="../static.mingchao.com/official/css/messenger-theme-future.css" tppabs="http://static.mingchao.com/official/css/messenger-theme-future.css">
+		
+<link href="../static.mingchao.com/official/css/jobapply.css" tppabs="http://static.mingchao.com/official/css/jobapply.css" rel="stylesheet" type="text/css">
+
+
+
+		
+		
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="../cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js" tppabs="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+			<script src="../cdn.bootcss.com/respond.js/1.3.0/respond.min.js" tppabs="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
+		<![endif]-->
+	</head>
+<body>
+  	
+<div ng-app="mainApp" ng-controller="mainAppCtrl">
+	<div id="cleft_box">
+		<div class="cleft_inner">
+			<div id="inner_btn"><span></span></div>
+			<div class="inner_info">
+				<div class="inner_list">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="navbar navbar-default "  id="job-nav-top"  role="navigation">
+		<div class="container">
+				<ul class="nav navbar-nav">
+					<li><a class="nav-brand" href="index.htm" tppabs="http://www.mingchao.com/"><img src="../static.mingchao.com/official/images/campus/logo2.png" tppabs="http://static.mingchao.com/official/images/campus/logo2.png"></a></li>
+				</ul>
+		</div>
+	</div>
+	<div class="container">
+		<ol id="alert-top" class="breadcrumb">
+		  <li ><a  href="welcome.html" tppabs="http://www.mingchao.com/welcome.html">基本信息</a></li>
+		  <li ><span class="glyphicon glyphicon-chevron-right"></span><span class="glyphicon glyphicon-chevron-right"></span><a  ng-class="{ 'breadActive' : panel.base }" href="" ng-click="showPanel('base')">基础信息</a></li>
+		  <li ><span class="glyphicon glyphicon-chevron-right"></span><span class="glyphicon glyphicon-chevron-right"><a  ng-class="{ 'breadActive' : panel.family }"  href="" ng-click="showPanel('family')">家庭信息</a></li>
+		  <li ><span class="glyphicon glyphicon-chevron-right"></span><span class="glyphicon glyphicon-chevron-right"><a  ng-class="{ 'breadActive' : panel.education }"  href="" ng-click="showPanel('education')">教育信息</a></li>
+		  <li ><span class="glyphicon glyphicon-chevron-right"></span><span class="glyphicon glyphicon-chevron-right"><a  ng-class="{ 'breadActive' : panel.training }"  href="" ng-click="showPanel('training')">培训信息</a></li>
+		  <li ><span class="glyphicon glyphicon-chevron-right"></span><span class="glyphicon glyphicon-chevron-right"><a  ng-class="{ 'breadActive' : panel.experience }"  href="" ng-click="showPanel('experience')">工作经历</a></li>
+		  <li ><span class="glyphicon glyphicon-chevron-right"></span><span class="glyphicon glyphicon-chevron-right"><a  ng-class="{ 'breadActive' : panel.verify }"  href="" ng-click="showPanel('verify')">验证提交</a></li>
+		</ol>
+		<div class="panel panel-primary" ng-show="panel.base">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<span class="glyphicon glyphicon-send"></span> 基础信息
+					</h3>
+				</div>
+				<div class="panel-body table-responsive">
+				<form class="form-horizontal w5c-form demo-form" role="form">
+					  
+					<table class="table table-bordered table-condensed text-right" id="base-demand">
+							<tbody>
+								<tr>
+									<td class="active"  >
+										<em>*</em>申请职位：
+									</td>
+									<td ng-class="{ 'has-error' : showError['apply_position'] }">
+										<select class="form-control  input-sm col-xs-4 input-sm " ng-model="info.apply_position" ng-options="value.position_name as value.position_name group by value.group for (key,value) in op.position">
+											<option value="">---请选择职位---</option>
+										</select>
+									</td>
+									<td class="active"  >
+										<em>*</em>其它意向职位：
+									</td>
+									<td  ng-class="{ 'has-error' : showError['else_apply_position'] }">
+										<select class="form-control  input-sm col-xs-4 input-sm " ng-model="info.else_apply_position" ng-options="value.position_name as value.position_name group by value.group for (key,value) in op.position">
+											<option value="">---请选择职位---</option>
+										</select>
+									</td>
+									<td class="active"  >
+										<em>*</em>是否接受岗位调剂：
+									</td>
+									<td  colspan="3" ng-class="{ 'has-error' : showError['optionsRadios'] }">
+											<span class="pull-left control-label">
+											  <label><input type="radio" ng-model="info.optionsRadios"  value="1" >是</label>
+											  <label><input type="radio" ng-model="info.optionsRadios"  value="0" >否</label>
+											</span>
+										</td>
+								</tr>
+								<tr>
+									<td class="active" colspan="1" ><em>*</em>应聘渠道：</td>
+									<td colspan="5" class="text-left">
+										<span  ng-class="{ 'has-error' : showError['channel'] }">
+											<label class="checkbox-inline" ng-repeat="(k,v) in op.channelArr" >
+												<input type="checkbox" checklist-model="info.channel" checklist-value="v" ng-click="supplement(k)"/>{{v}}
+											</label>
+										</span> 
+									</td>
+                               </tr>
+                               <tr  ng-show="show.forum || show.recommend || show.other">
+                                   <td class="active" colspan="1" ><em>*</em>补充：</td>
+                                   <td   colspan="5" >
+                                        <div id="channel-forum" ng-show="show.forum">
+    									    <div class='input-group'><span class='input-group-addon'>论坛</span><input class='form-control input-sm' name='forum-way' placeholder='填写论坛名称' ng-model="info.forum"  type='text'></div>
+    									</div>
+    									<div id="channel-recommend" ng-show="show.recommend">
+    									    <div class='input-group'  ><span class='input-group-addon'>推荐人</span><input class='form-control input-sm pername' name='recommend-name' placeholder='推荐人姓名' ng-model="info.recommend" type='text'></div>
+										</div>
+										<div id="channel-other" ng-show="show.other">
+											<div class='input-group'><span class='input-group-addon'>其他</span><input class='form-control input-sm' name='other-way' placeholder='其他招聘渠道' ng-model="info.other" type='text'></div>
+										</div>
+								</td>
+								</tr>
+							</tbody>
+					</table>
+					
+					<table class="table table-bordered table-condensed text-right" id="base-info">
+							<tbody>
+								<tr>
+									<td class="active col-xs-1" ><em>*</em>姓名：</td>
+									<td class="col-xs-2" ng-class="{ 'has-error' : showError['user_name'] }">
+										<input type="text" class="form-control  input-sm input-required" ng-model="info.user_name" placeholder="请输入您的姓名" disabled/></td>
+									<td class="active col-xs-1"><em>*</em>性别：</td>
+									<td class="col-xs-3" ng-class="{ 'has-error' : showError['sex'] }">
+										<select class="form-control  input-sm col-xs-4" ng-model="info.sex" ng-options="v as v for (k,v) in op.sexArr">
+											<option value="">---请选择性别---</option>
+										</select>
+									</td>
+                                                                        <td class="active col-xs-1"></td>
+									<td class="active col-xs-3" ng-class="{ 'has-error' : showError['marry'] }">
+									</td>
+								</tr>
+								<tr>
+									<td class="active">血型：</td>
+									<td ng-class="{ 'has-error' : showError['blood_type'] }">
+										<input type="text" class="form-control  input-sm pername" ng-model="info.blood_type" placeholder="请输入您的血型" />
+									</td>
+									<td class="active"><em>*</em>身份证号码：</td>
+									<td  ng-class="{ 'has-error' : showError['id_card'] }">
+											<input type="text" class="form-control  input-sm input-required" ng-model="info.id_card"  placeholder="请输入您的身份证"  disabled/>
+                                    </td>
+                                    <td class="active"><em>*</em>身高(cm)：</td>
+									<td class="col-xs-2">
+										<div class="input-group" ng-class="{ 'has-error' : showError['height'] }">
+											<input type="text" class="col-sm-1 form-control input-sm input-required number" ng-model="info.height" placeholder="请输入您的身高"/>
+											<span class="input-group-addon">cm</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="active"><em>*</em>体重(kg)：</td>
+									<td class="col-xs-3">
+										<div class="input-group" ng-class="{ 'has-error' : showError['weight'] }">
+											<input type="text" class="form-control  input-sm input-required number" ng-model="info.weight" placeholder="请输入您的体重"  />
+											<span class="input-group-addon">kg</span>
+										</div>
+									</td>
+									<td class="active"><em>*</em>民族：</td>
+									<td class="col-xs-2">
+										<div class="input-group"  ng-class="{ 'has-error' : showError['nation'] }">
+											<input type="text" class="form-control  input-sm input-required pername" ng-model="info.nation" placeholder="请输入您的民族" />
+											<span class="input-group-addon">族</span>
+										</div>
+									</td>
+									<td class="active"><em>*</em>出生日期：</td>
+									<td ng-class="{ 'has-error' : showError['birthday'] }"><input type="text" class="form-control  input-sm input-required" ng-model="info.birthday" placeholder="请输入您的出生日期" mcdatepicker/></td>
+								</tr>
+								<tr>
+									<td class="active"><em>*</em>出生地：</td>
+									<td ng-class="{ 'has-error' : showError['province_birthday'] }"><select class="form-control  input-sm col-xs-4 input-required" ng-model='info.province_birthday' name="province_birthday"></select></td>
+									<td colspan="2" ng-class="{ 'has-error' : showError['city_birthday'] }">
+									<select class="form-control  input-sm input-required" ng-model="info.city_birthday" name="city_birthday"></select></td>
+									
+									<td class="active"><em>*</em>户口性质：</td>
+									<td ng-class="{ 'has-error' : showError['register'] }">
+										<select class="form-control  input-sm input-required" ng-model='info.register' ng-options="v as v for (k,v) in op.registerArr">
+											<option value="">--请选择户口性质--</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td class="active"><em>*</em>籍贯：</td>
+									<td ng-class="{ 'has-error' : showError['province'] }"> <select class="form-control  input-sm col-xs-4 input-required" ng-model='info.province' name="province"></select></td>
+									<td colspan="2" ng-class="{ 'has-error' : showError['city'] }"><select class="form-control  input-sm input-required" ng-model="info.city" name="city"></select></td>
+									
+									<td class="active"><em>*</em>国籍：</td>
+									<td ng-class="{ 'has-error' : showError['country'] }"><input type="text" class="form-control  input-sm input-required pername" ng-model="info.country" placeholder="请输入您的国籍" /></td>
+									
+								</tr>
+								<tr>
+									<td class="active"><em>*</em>本人现住址：</td>
+									<td ng-class="{ 'has-error' : showError['now_address'] }"><input type="text" class="form-control  input-sm input-required" ng-model="info.now_address" placeholder="请输入您的住址" /></td>
+									<td class="active"><em>*</em>本人家庭住址：</td>
+									<td ng-class="{ 'has-error' : showError['home_address'] }"><input type="text" class="form-control  input-sm input-required" ng-model="info.home_address" placeholder="请输入您的家庭地址" /></td>
+									<td class="active"><em>*</em>家庭电话：</td>
+									<td ng-class="{ 'has-error' : showError['home_phone'] }"><input type="text" class="form-control  input-sm input-required number" ng-model="info.home_phone" placeholder="请输入您的家庭电话" /></td>
+								</tr>
+								
+								<tr>
+									<td class="active"><em>*</em>手机：</td>
+									<td ng-class="{ 'has-error' : showError['cellphone'] }"><input type="text" class="form-control  input-sm input-required number" ng-model="info.cellphone" placeholder="请输入您的手机"  /></td>
+									<td class="active"><em>*</em>Email：</td>
+									<td ng-class="{ 'has-error' : showError['email'] }"><input type="email" class="form-control  input-sm input-required email" ng-model="info.email" placeholder="请输入您的邮箱" /></td>
+									<td class="active"><em>*</em>QQ：</td>
+									<td ng-class="{ 'has-error' : showError['qq'] }"><input type="text" class="form-control  input-sm input-required number" ng-model="info.qq" placeholder="请输入您的QQ" /></td>
+								</tr>
+								<tr>
+									<td class="active"><em>*</em>广州应急联系人姓名：</td>
+									<td ng-class="{ 'has-error' : showError['emergency_name'] }"><input type="text" class="form-control  input-sm input-required pername" ng-model="info.emergency_name" placeholder="请输入广州应急联系人姓名" /></td>
+									<td class="active"><em>*</em>与本人关系：</td>
+									<td ng-class="{ 'has-error' : showError['emergency_relation'] }"><input type="text" class="form-control  input-sm input-required pername" ng-model="info.emergency_relation" placeholder="请输入与本人关系" /></td>
+									<td class="active"><em>*</em>广州应急联系人电话：</td>
+									<td ng-class="{ 'has-error' : showError['emergency_phone'] }"><input type="text" class="form-control  input-sm input-required number" ng-model="info.emergency_phone" placeholder="请输入广州应急联系人电话" /></td>
+								</tr>
+								<tr>
+									<td class="active"><em>*</em>户口地址：</td>
+									<td ng-class="{ 'has-error' : showError['registered_address'] }"><input type="text" class="form-control  input-sm input-required" ng-model="info.registered_address" placeholder="请输入户口地址（一般填写身份证上面的地址信息）" /></td>
+									<td colspan="2" class="active"><em>*</em>有无患过重病，或动过手术，是否有其他长期或慢性疾病：</td>
+									<td colspan="2" ng-class="{ 'has-error' : showError['medical_history'] }"><input type="text" class="form-control  input-sm input-required" ng-model="info.medical_history" placeholder="请输入相关病史" /></td>
+								</tr>
+								<tr>
+									<td class="active" colspan="1" ><em>*</em>目前劳动关系状况：</td>
+									<td>
+										<span class="pull-left" ng-class="{ 'has-error' : showError['labor_relations'] }">
+											  <label class="control-label" ng-repeat="(k,v) in op.laborRelationsArr">
+											  	<input type="radio" ng-model="info.labor_relations" ng-change="info.talent_additional.other_labor_relations = '' " value="{{v}}" >{{v}}
+											  </label>
+											  <input type="text" ng-if=" info.labor_relations == '其他' " class="form-control  input-sm" ng-model="info.talent_additional.other_labor_relations" placeholder="说明一下劳动关系状况">
+										</span>
+									</td>
+									<td class="active" colspan="1" ><em>*</em>是否对其他单位承担竞业限制义务：</td>
+									<td class="text-left">
+										<span class="pull-left" ng-class="{ 'has-error' : showError['limited_obligation'] }">
+											  <label class="control-label" ng-repeat="(k,v) in op.limitedObligationArr">
+											  	<input type="radio" ng-model="info.limited_obligation" value="{{v}}" >{{v}}
+											  </label>
+										</span>
+									</td>
+									<td class="active" colspan="1" ><em>*</em>宗教信仰：</td>
+									<td class="text-left">
+										<span class="pull-left" ng-class="{ 'has-error' : showError['religion'] }">
+											  <label class="control-label" ng-repeat="(k,v) in op.religionArr">
+											  	<input type="radio" ng-model="info.religion" ng-change="info.talent_additional.other_religion_name = '' " value="{{v}}" >{{v}}
+											  </label>
+											  <input type="text" ng-if=" info.religion == '有' " class="form-control  input-sm" ng-model="info.talent_additional.other_religion_name" placeholder="说明一下宗教信仰">
+										</span>
+									</td>
+                               </tr>
+								<tr>
+									<td class="active"><em>*</em>其他：</td>
+									<td class="text-left" ng-class="{ 'has-error' : showError['smoke'] }">
+										<select class="form-control  input-sm col-xs-4 input-required" ng-model="info.smoke" ng-options="k as v for (k,v) in op.smokeArr">
+											<option value="">--请选择抽烟习惯--</option>
+										</select>
+									</td>
+									<td class="text-left" colspan="2" ng-class="{ 'has-error' : showError['tattoo'] }">
+										<select class="form-control  input-sm col-xs-4 input-required" ng-model="info.tattoo" ng-options="k as v for (k,v) in op.tattooArr">
+											<option value="">--请选择是否纹身--</option>
+										</select>
+									</td>
+									<td class="text-left" colspan="2" ng-class="{ 'has-error' : showError['illegal'] }">
+										<select class="form-control  input-sm col-xs-4 input-required" ng-model="info.illegal" ng-options="k as v for (k,v) in op.illegalRecordArr">
+											<option value="">--是否曾有过违法违纪行为或受到过行政、刑事处罚--</option>
+										</select>
+									</td>									
+								</tr>
+								<tr>
+                                    <td class="active">职称：</td>
+                                    <td ng-class="{ 'has-error' : showError['title'] }"><input type="text" class="form-control  input-sm" ng-model="info.title" placeholder="请输入职称" /></td>
+									<td class="active">兴趣、爱好和所喜欢的运动：</td>
+									<td colspan="1" ng-class="{ 'has-error' : showError['hobby'] }">
+									<textarea class="form-control input-sm" rows="2" ng-model="info.hobby" placeholder="请输入兴趣爱好"></textarea>
+									</td>
+                                   <td class="active">有无亲属或朋友在明朝工作：</td>
+                                   <td colspan="1">
+                                       <span class="pull-left">
+                                           <label class="control-label"><input type="radio"name="has_friends"value="1"ng-model="info.has_friends">有</label>
+                                           <label class="control-label"><input type="radio" value="0" ng-model="info.has_friends" name="has_friends">无</label>
+                                       </span>
+                                       <span ng-class="{ 'has-error' : showError['friends_name'] }">
+                                           <input ng-show="info.has_friends == 1"type="text"class="form-control  input-sm"name="friends_name"ng-model="info.friends_name" placeholder="请输入亲属或朋友的具体姓名">
+                                       </span>
+                                   </td>
+								</tr>
+								<tr>
+									<td class="active">性格特征及自我评价：</td>
+									<td colspan="5" ng-class="{ 'has-error' : showError['self_assessment'] }">
+										<textarea class="form-control input-sm" rows="4" ng-model="info.self_assessment" placeholder="请输入性格特征及自我评价"></textarea>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<table class="table table-bordered table-condensed text-right" id="base-demand">
+							<tbody>
+								<tr>
+									<td class="active"><em>*</em>本人期望待遇：</td>
+									<td class="col-xs-3">
+										<div class="input-group" ng-class="{ 'has-error' : showError['hope_try_salary'] }">
+										  <span class="input-group-addon">￥</span>
+										  <input type="text" class="form-control input-sm input-required number" ng-model="info.hope_try_salary" placeholder="试用（税前/月）"/>
+										  <span class="input-group-addon">.00</span>
+										</div>
+									</td>
+									<td class="col-xs-3">
+										<div class="input-group" ng-class="{ 'has-error' : showError['hope_formal_salary'] }">
+										  <span class="input-group-addon">￥</span>
+										  <input type="text" class="form-control input-sm input-required number" ng-model="info.hope_formal_salary" placeholder="转正（税前/月）"/>
+										  <span class="input-group-addon">.00</span>
+										</div>
+									</td>
+									<td ng-class="{ 'has-error' : showError['hope_else'] }">
+										<input type="text" class="form-control input-sm" id='no-demand' ng-model="info.hope_else" placeholder="其它方面待遇(可不填)"  />
+									</td>
+								</tr>
+								<tr>
+									<td class="active"><em>*</em>累计工作年限：</td>
+									<td>
+										<div class="input-group" ng-class="{ 'has-error' : showError['work_age'] }">
+										  <input type="text" class="form-control input-sm input-required number" ng-model="info.work_age" placeholder="请输入您的累计工作年限(月)"  />
+										  <span class="input-group-addon">月</span>
+										</div>
+									</td>
+									<td class="active"><em>*</em>最快入职时间：</td>
+									<td ng-class="{ 'has-error' : showError['fastest_entry_time'] }"><input type="text" class="form-control input-sm input-required" ng-model="info.fastest_entry_time" placeholder="请输入最快入职时间"  mcdatepicker/></td>
+								</tr>
+							</tbody>
+						</table>
+						
+						<div class="rows text-center" >
+							<button type="buttom" ng-click="saveBase()" class="btn btn-info btn-sm">保存，继续填写下一部分</button>
+						</div>
+
+					</form>
+				 
+				</div>
+				
+				</div>
+				
+		<!-- 家庭成员 Start -->
+		<div class="panel panel-primary" ng-show="panel.family">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<span class="glyphicon glyphicon-user"></span> 家庭成员
+					</h3>
+				</div>
+				<div class="panel-body table-responsive">
+					<table class="table table-bordered" id="family-table">
+						<tr>
+							<td class="col-xs-1 active"><em>*</em>姓名</td>
+							<td class="col-xs-1 active"><em>*</em>年龄</td>
+							<td class="col-xs-1 active"><em>*</em>与本人关系</td>
+							<td class="col-xs-2 active"><em>*</em>联系电话</td>
+							<td class="col-xs-3 active" ><em>*</em>公司/单位名称与职务</td>
+							<td class="col-xs-4 active"><em>*</em>通讯地址</td>
+							<td class="active">&nbsp;</td>
+						</tr>
+						<tr ng-repeat="(k,v) in info.family">
+							<td ng-class="{ 'has-error': showError.family[k].name }">
+								<input type="text" class="form-control input-sm input-required"   placeholder="姓名"  ng-model="info.family[k].name"/></td>
+							<td ng-class="{ 'has-error': showError.family[k].old }">
+								<input type="text" class="form-control input-sm input-required number" placeholder="年龄" ng-model="info.family[k].old"/></td>
+							<td ng-class="{ 'has-error': showError.family[k].relation }">
+								<select class="form-control input-sm input-required" ng-model="info.family[k].relation" ng-options="v as v for (k,v) in op.famliyArr">
+									<option value="">--请选择--</option>
+								</select>
+							<td ng-class="{ 'has-error': showError.family[k].telphone }">
+								<input type="text" class="form-control input-sm input-required number"  placeholder="联系电话" ng-model="info.family[k].telphone" /></td>
+							<td ng-class="{ 'has-error': showError.family[k].company }">
+								<input type="text" class="form-control input-sm input-required"  placeholder="请输入公司名称与职务" ng-model="info.family[k].company" /></td>
+							<td ng-class="{ 'has-error': showError.family[k].address }">
+								<input type="text" class="form-control input-sm input-required" placeholder="请输入通讯地址" ng-model="info.family[k].address"   /></td>
+							<td>
+								<button ng-show="info.family.length>1" type="button" class="btn btn-danger btn-xs"  ng-click="delRow('family',k)">删除</button></td>
+						</tr>
+
+					</table>
+					
+					<div class="rows text-center">
+						<button  type="button" class="btn btn-success btn-sm"  ng-click="addRow('family')">新增</button>
+						<button type="button" class="btn btn-info btn-sm"  ng-click="saveFamily()">保存，继续填写下一部分</button>
+					</div>
+				</div>
+			</div>
+		<!-- 家庭成员 End -->
+			
+		<!-- 教育信息 Start -->
+		<div class="panel panel-primary"  ng-show="panel.education">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<span class="glyphicon glyphicon-star"></span> 教育信息<b class=" ">(填写高中及以上学历，从近到远填写)</b>
+					</h3>
+				</div>
+				<div class="panel-body table-responsive">
+					<table class="table table-bordered" id="education-table">
+						<tbody>
+							<tr>
+								<td class="active"><em>*</em>开始时间</td>
+								<td class="active"><em>*</em>结束时间</td>
+								<td class="active col-xs-2"><em>*</em>学校名称</td>
+								<td class="active col-xs-2"><em>*</em>专业(高中填文理科)</td>
+								<td class="active col-xs-1"><em>*</em>学历</td>
+								<td class="active col-xs-1"><em>*</em>学位</td>
+								<td class="active col-xs-1"><em>*</em>获得证件</td>
+								<td class="active">&nbsp;</td>
+							</tr>
+							<tr ng-repeat="(k,v) in info.education">
+								<td ng-class="{ 'has-error': showError.education[k].start }">
+									<input mcdatepicker type="text" class="form-control input-sm input-required education-strat" ng-model="info.education[k].start" placeholder="开始时间" /></td>
+								<td ng-class="{ 'has-error': showError.education[k].end }">
+									<input mcdatepicker type="text" class="form-control input-sm input-required education-end" ng-model="info.education[k].end"  placeholder="结束时间"  /></td>
+								<td ng-class="{ 'has-error': showError.education[k].school }">
+									<input type="text" class="form-control input-sm input-required" ng-model="info.education[k].school"  placeholder="学校" /></td>
+								<td ng-class="{ 'has-error': showError.education[k].major }">
+									<input type="text" class="form-control input-sm input-required" ng-model="info.education[k].major" placeholder="专业" /></td>
+								<td ng-class="{ 'has-error': showError.education[k].education }">
+									<select class="form-control input-sm perOption" ng-model="info.education[k].education" ng-options="v as v for (k,v) in op.educationArr">
+										<option value="">--请选择--</option>
+									</select>
+								</td>
+								<td ng-class="{ 'has-error': showError.education[k].degree }">
+									<select class="form-control input-sm subOption" ng-model="info.education[k].degree" ng-options="v as v for (k,v) in op.degreeArr[v.education]">
+										<option value="">--请选择--</option>
+									</select>
+								</td>
+								<td ng-class="{ 'has-error': showError.education[k].certificate }">
+									<div class="checkbox" style="margin:0px;">
+										<label ng-init="certificate1='毕业证'">
+												<input type="checkbox" checklist-model="info.education[k].certificate" checklist-value="certificate1" />毕业证
+										</label>
+										<label ng-init="certificate2='学位证'">
+												<input type="checkbox" checklist-model="info.education[k].certificate" checklist-value="certificate2" />学位证
+										</label>
+									</div>
+								</td>
+								<td>
+									<button ng-show="info.education.length>1" type="button" class="btn btn-danger btn-xs"  ng-click="delRow('education',k)">删除</button>
+								</td>
+							</tr>
+							
+						</tbody>
+					</table>
+					<div class="rows text-center">
+						<button  type="button" class="btn btn-success  btn-sm"  ng-click="addRow('education')">新增</button>
+						<button type="button" class="btn btn-info btn-sm "  ng-click="saveEdu()">保存，继续填写下一部分</button>
+					</div>
+				</div>
+			</div>
+		<!-- 教育信息 End -->
+			
+		<!-- 培训经历 Start -->
+		<div class="panel panel-primary" ng-show="panel.training">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<span class="glyphicon glyphicon-wrench"></span> 培训经历
+					</h3>
+				</div>
+				<div class="panel-body table-responsive">
+					<h5 class="text-danger"><span class="glyphicon glyphicon-share-alt text-danger" aria-hidden="true"></span> 如果您没有相关的培训信息，可以不填写该项哦~</h5>
+					<table class="table table-bordered" id="training-table">
+						<tr>
+							<td class="active">开始时间</td>
+							<td class="active">结束时间</td>
+							<td class="active">培训机构</td>
+							<td class="active">培训内容</td>
+							<td class="active">学习方式</td>
+							<td class="active">资格证书</td>
+							<td class="active">&nbsp;</td>
+						</tr>
+						<tr ng-repeat="(k,v) in info.training">
+							<td ng-class="{ 'has-error': showError.training[k].start }">
+								<input type="text" class="form-control  input-sm" ng-model="info.training[k].start" placeholder="请输入开始时间" mcdatepicker/></td>
+							<td ng-class="{ 'has-error': showError.training[k].end }">
+								<input type="text" class="form-control  input-sm" ng-model="info.training[k].end" placeholder="请输入结束时间" mcdatepicker/></td>
+							<td ng-class="{ 'has-error': showError.training[k].agency }">
+								<input type="text" class="form-control  input-sm" ng-model="info.training[k].agency" placeholder="请输入培训机构" /></td>
+							<td ng-class="{ 'has-error': showError.training[k].content }">
+								<input type="text" class="form-control  input-sm" ng-model="info.training[k].content" placeholder="请输入培训内容" /></td>
+							<td ng-class="{ 'has-error': showError.training[k].style }">
+								<input type="text" class="form-control  input-sm" ng-model="info.training[k].style" placeholder="请输入学习方式" /></td>
+							<td ng-class="{ 'has-error': showError.training[k].certificate }">
+								<input type="text" class="form-control  input-sm" ng-model="info.training[k].certificate" placeholder="请输入资格证书" /></td>
+							<td>
+								<button ng-show="info.training.length>1"  type="button" class="btn btn-danger btn-xs"  ng-click="delRow('training', k)">删除</button>
+							</td>
+						</tr>
+						
+					</table>
+					
+						<div class="rows text-center">
+						<button   type="button" class="btn btn-success btn-sm"  ng-click="addRow('training')">新增</button>
+						<button type="button" class="btn btn-info btn-sm"  ng-click="saveTrain()">保存，继续填写下一部分</button>
+					</div>
+				</div>
+			</div>
+		<!-- 培训经历 End -->
+	
+		<!-- 工作经历 Start -->
+		<div class="panel panel-primary" ng-show="panel.experience">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<span class="glyphicon glyphicon-lock"></span> 工作经历<b
+							class="text-red">(应届生填写实习经历，请按照时间由近及远的顺序填写)</b>
+					</h3>
+				</div>
+				<div class="panel-body" id='exp-table'>
+						<table class="table table-bordered table-condensed text-right" ng-repeat="(k,v) in info.experience">
+							<tr >
+								<td class="col-xs-1 active"><em>*</em>起止时间：</td>
+								<td ng-class="{ 'has-error': showError.experience[k].start }">
+									<input  mcdatepicker type="text" class="form-control input-sm input-required" ng-model="info.experience[k].start" placeholder="请输入开始时间" /></td>
+								<td colspan="2" ng-class="{ 'has-error': showError.experience[k].end }">
+									<input mcdatepicker type="text" class="form-control input-sm input-required" ng-model="info.experience[k].end" placeholder="请输入结束时间" /></td>
+								<td class="col-xs-1 active"><em>*</em>担任职务：</td>
+								<td ng-class="{ 'has-error': showError.experience[k].position }">
+									<input type="text" class="form-control input-sm input-required" ng-model="info.experience[k].position" placeholder="请输入担任职务"/></td>
+							</tr>
+							<tr>
+								<td class="active"><em>*</em>单位名称：</td>
+								<td class="col-xs-3" ng-class="{ 'has-error': showError.experience[k].company }">
+									<input type="text" class="form-control  input-sm input-required" ng-model="info.experience[k].company" placeholder="请输入单位名称" /></td>
+								<td class="active col-xs-1"><em>*</em>任职部门：</td>
+								<td class="col-xs-2" ng-class="{ 'has-error': showError.experience[k].department }">
+									<input type="text" class="form-control input-sm input-required" ng-model="info.experience[k].department" placeholder="请输入任职部门"/></td>
+								<td class="col-xs-1 active" rowspan=2><em>*</em>收入待遇：</td>
+								<td rowspan=2>
+									<div class="input-group" ng-class="{ 'has-error': showError.experience[k].salary }">
+									  <span class="input-group-addon">基本工资：</span>
+									  <input type="text" class="form-control input-sm input-required number" ng-model="info.experience[k].salary" placeholder="基本工资"  />
+									  <span class="input-group-addon">.00</span>
+									</div>
+									<div class="input-group" style="padding-top:5px;" ng-class="{ 'has-error': showError.experience[k].income }">
+									  <span class="input-group-addon">全年收入：</span>
+									  <input type="text" class="form-control input-sm input-required number" ng-model="info.experience[k].income" placeholder="全年收入"  />
+									  <span class="input-group-addon">.00</span>
+									</div>
+								</td>
+								
+							</tr>
+							<tr>
+								<td class="col-xs-1 active"><em>*</em>单位人数：</td>
+								<td class="col-xs-2" ng-class="{ 'has-error': showError.experience[k].scale }">
+									<select class="form-control input-sm input-required" ng-model="info.experience[k].scale" ng-options="v as v for (k,v) in op.scaleArr">
+										<option value="">--请选择--</option>
+									</select>
+								</td>
+								<td class="active">下属人数：</td>
+								<td ng-class="{ 'has-error': showError.experience[k].subordinate }"> 
+									<input type="text" class="form-control input-sm number" ng-model="info.experience[k].subordinate" placeholder="请输入下属人数"  /></td>
+							</tr>
+							<tr>
+								<td class="active"><em>*</em>主要工作内容：</td>
+								<td colspan="5"ng-class="{ 'has-error': showError.experience[k].content }">
+									<textarea class="form-control input-sm input-required" rows="4" ng-model="info.experience[k].content" placeholder="请输入工作内容">  </textarea></td>
+							</tr>
+							<tr>
+								<td class="active">主要工作业绩及获得荣誉：</td>
+								<td colspan="5" ng-class="{ 'has-error': showError.experience[k].performance }">
+									<textarea class="form-control input-sm" rows="4" ng-model="info.experience[k].performance" placeholder="请输入工作业绩"> </textarea></td>
+							</tr>
+							<tr>
+								<td class="active"><em>*</em>离职原因：</td>
+								<td ng-class="{ 'has-error': showError.experience[k].reason }">
+									<input type="text" class="form-control input-sm input-required" ng-model="info.experience[k].reason" placeholder="请输入离职原因"  /></td>
+								<td class="active"><em>*</em>证明人：</td>
+								<td ng-class="{ 'has-error': showError.experience[k].prove }">
+									<input type="text" class="form-control input-sm pername input-required" ng-model="info.experience[k].prove" placeholder="HR或主管"  /></td>
+								<td class="active"><em>*</em>电话：</td>
+								<td ng-class="{ 'has-error': showError.experience[k].prove_telphone }">
+									<input type="text" class="form-control input-sm input-required" ng-model="info.experience[k].prove_telphone" placeholder="请输入电话"  /></td>
+							</tr>
+							<tr>
+								<td colspan="6">
+									<button type="button" class="btn btn-danger btn-xs"  ng-click="delRow('experience',k)">删除工作经历</button>
+								</td>
+							</tr>
+						</table>
+				
+				<div class="rows text-center">
+					<button   type="button" class="btn btn-success btn-sm"  ng-click="addRow('experience')">新增</button>
+						<button type="button" class="btn btn-info btn-sm"  ng-click="saveExpe()">保存，继续填写下一部分</button>
+				</div>
+				</div>
+			</div>
+		<!-- 工作经历 End -->
+			
+		<!-- 最后确定提交  Start-->
+		<div class="panel panel-success" ng-show="panel.verify">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<span class="glyphicon glyphicon-pencil"></span> 确认信息 & 验证
+					</h3>
+				</div>
+				<div class="panel-body">
+					<h5>我保证所填写的表格的每一项内容信息的真实性，并愿意接受公司或其委托的合法机构对工作申请表中所有信息进行必要的调查确认。</h5>
+					<div class="form-group" style="text-align:center">
+						<button type="submit" class="btn btn-success" ng-click="submit()">确认提交</button>
+					</div>
+ 
+				</div>
+			</div>
+		<!-- 最后确定提交  End-->
+
+        <!-- 提示模态框（Modal） -->
+        <div style="padding-top: 100px" class="modal fade" id="msgModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">提示</h4>
+                    </div>
+                    <div class="modal-body">
+                        您的申请表已经成功提交，请详细阅读面试邮件通知，并提前做好面试准备，<a href="index.htm" tppabs="http://www.mingchao.com/">明朝互动</a>真诚期待您的加入！
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+		
+		</div>
+	</div>
+</div>	
+
+
+
+  	 <script src="../static.mingchao.com/official/js/jquery-1.10.2.min.js" tppabs="http://static.mingchao.com/official/js/jquery-1.10.2.min.js"></script>
+	<script src="../static.mingchao.com/official/bootstrap/js/bootstrap.min.js" tppabs="http://static.mingchao.com/official/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../static.mingchao.com/official/js/messenger.min.js" tppabs="http://static.mingchao.com/official/js/messenger.min.js"></script>
+	<script src="../static.mingchao.com/official/js/common2.js" tppabs="http://static.mingchao.com/official/js/common2.js"></script>
+	<script src="../static.mingchao.com/official/bootstrap/js/bootstrap-datetimepicker.min.js" tppabs="http://static.mingchao.com/official/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+	<script src="../static.mingchao.com/official/js/angular/angular.js" tppabs="http://static.mingchao.com/official/js/angular/angular.js"></script>
+	<script src="../static.mingchao.com/official/js/mcGrid/Mc.datetimepicker.js" tppabs="http://static.mingchao.com/official/js/mcGrid/Mc.datetimepicker.js"></script>
+	<script src="../static.mingchao.com/official/js/w5cValidator/js/angular-highlightjs.js" tppabs="http://static.mingchao.com/official/js/w5cValidator/js/angular-highlightjs.js"></script>
+	<script src="../static.mingchao.com/official/js/w5cValidator/js/highlight.pack.js" tppabs="http://static.mingchao.com/official/js/w5cValidator/js/highlight.pack.js"></script>
+	<script src="../static.mingchao.com/official/js/w5cValidator/js/w5cValidator.js" tppabs="http://static.mingchao.com/official/js/w5cValidator/js/w5cValidator.js"></script>
+	<script src="../static.mingchao.com/official/js/angular/checklist.model.js" tppabs="http://static.mingchao.com/official/js/angular/checklist.model.js"></script>
+	
+<script type="text/javascript"  src="../static.mingchao.com/official/js/ui-bootstrap-tpls-0.11.0.js" tppabs="http://static.mingchao.com/official/js/ui-bootstrap-tpls-0.11.0.js"></script>
+<script type="text/javascript"  src="../static.mingchao.com/official/js/area.js" tppabs="http://static.mingchao.com/official/js/area.js"></script>
+<script type="text/javascript">
+
+
+$(document).ready(function(){
+    var info ={};
+	new PCAS("province","city",info.province,info.city);
+	new PCAS("province_birthday","city_birthday",info.province_birthday, info.city_birthday);
+	
+});
+
+var mainApp = angular.module('mainApp', ["ui.bootstrap",'checklist-model','mc.datetimepicker']);
+var PostUrl="api/JobApply.php-action=.htm"/*tpa=http://www.mingchao.com/api/JobApply.php?action=*/;
+mainApp.factory('mainService', function( $http, $q ){
+	var service = {};
+	var angularPost = function( postData, url ) {
+		var deferred = $q.defer();
+		$http({
+			url: url,
+			method: "post",
+			data : $.param( postData ),
+			headers : { 'Content-Type' : 'application/x-www-form-urlencoded'},
+		}).success(function(json){
+			deferred.resolve(json);
+		});
+		return deferred.promise;
+	};
+	service.geJobApplyInfo = function( data ) {
+		return angularPost( data, PostUrl+"geJobApplyInfo" );
+	}
+    service.initAgain = function( data ) {
+        return angularPost( data, PostUrl+"initAgain" );
+    }
+	service.saveBase = function( data ) {
+		return angularPost( data, PostUrl+"saveBase" );
+	}
+	service.saveFamily = function( data ) {
+		return angularPost( data, PostUrl+"saveFamily" );
+	}
+	service.saveEdu = function( data ) {
+		return angularPost( data, PostUrl+"saveEdu" );
+	}
+	service.saveTrain = function( data ) {
+		return angularPost( data, PostUrl+"saveTrain" );
+	}
+	service.saveExpe = function( data ) {
+		return angularPost( data, PostUrl+"saveExpe" );
+	}
+	service.submit = function( data ) {
+		return angularPost( data, PostUrl+"submit" );
+	}
+	return service;
+});
+mainApp.controller("mainAppCtrl",function($http, $scope, mainService ) {
+    $scope.geJobApplyInfo = function(){
+        mainService.geJobApplyInfo('').then(function(json){
+            $scope.op = json.option;
+            if(json.applyInfo == false){
+            	alert("登录失效了，请重新登录");
+                window.location.href = "welcome.html"/*tpa=http://www.mingchao.com/welcome.html*/;
+            }else{
+                $scope.info = json.applyInfo;
+            }
+        })
+    }
+    $scope.geJobApplyInfo();
+
+	$scope.channel={};
+	$scope.entity={};
+	$scope.showError={};
+	//异步登陆
+	$scope.login = function () {
+		$scope.res={};
+		mainService.initAgain($scope.entity).then(function(json) {
+			if(json.status==1){
+				window.location.reload();
+			}else{
+				$scope.res=json;
+			}
+		});
+	};
+
+	//补充
+	$scope.supple={};
+	$scope.show={};
+	$scope.supplement = function(key) {
+		if(key==10)  $scope.show.other = !$scope.show.other;
+	}
+
+	//补充，追加
+	$scope.changeChannel=function(key,value,supple){
+		angular.forEach($scope.op.channelArr, function(channelItem,channelKey){
+			if(channelKey==key){
+				if(supple){
+					var newKey=value+"("+supple+")";
+					$scope.op.channelArr[channelKey]=newKey;
+				}else{
+					$scope.op.channelArr[channelKey]=value;
+				}
+			}
+		});
+
+	}
+	
+	//显示/隐藏模板
+	$scope.panel={'base':true};
+	$scope.showPanel=function(k){
+		$scope.panel={};
+		$scope.panel[k]=true;
+	}
+
+	
+	//保存基本信息
+	$scope.saveBase=function(){
+		$scope.baseinfo = {};
+		jQuery.extend($scope.baseinfo, $scope.info );
+		delete $scope.baseinfo.family;
+		delete $scope.baseinfo.education;
+		delete $scope.baseinfo.training;
+		delete $scope.baseinfo.experience;
+		mainService.saveBase($scope.baseinfo).then(function(json) {
+			$scope.showError={};
+			if(json.status==0){
+				if(json.error) showTips(json.error);
+				if(json.requiredErrorStr) showTips(json.requiredErrorStr);
+				if(json.lenghtErrorStr) showTips(json.lenghtErrorStr);
+				if(json.requiredError){
+					angular.forEach(json.requiredError, function(value,key){
+						$scope.showError[value]=true;
+					});
+				}
+			}
+			if(json.status==1){
+				showTips(json.msg);
+				$scope.panel={'family':true};
+				 $('body,html').animate({scrollTop:'0px'},1000);
+			}
+			if(json.miss==1){
+				alert("登录失效了，请重新登录");
+                window.location.href = "welcome.html"/*tpa=http://www.mingchao.com/welcome.html*/;
+			}
+			
+		});
+	}
+
+	//保存家庭信息
+	$scope.saveFamily = function(){
+		mainService.saveFamily({family:$scope.info.family}).then(function(json) {
+			saveExtend(json,"family","education");
+		});
+	}
+	//保存教育信息
+	$scope.saveEdu = function(){
+		mainService.saveEdu({education:$scope.info.education}).then(function(json) {
+			saveExtend(json,"education","training");
+		});
+	}
+	//保存培训信息
+	$scope.saveTrain = function(){
+		mainService.saveTrain({training:$scope.info.training}).then(function(json) {
+			saveExtend(json,"training","experience");
+		});
+	}
+	//保存工作经历信息
+	$scope.saveExpe = function(){
+		mainService.saveExpe({experience:$scope.info.experience}).then(function(json) {
+			saveExtend(json,"experience","verify");
+		});
+	}
+
+	//保存成功的回调
+	function saveExtend(json,thisExtend,nextExtend){
+		if(json.status==0){
+			$scope.showError[thisExtend]={};
+			if(json.error) showTips(json.error);
+			if(json.requiredError){
+				angular.forEach(json.requiredError, function(value,key){
+					$scope.showError[thisExtend][key]={};
+					angular.forEach(value, function(name,index){
+						$scope.showError[thisExtend][key][name]=true;
+					});
+				});
+				console.log($scope.showError);
+			}
+		}
+		if(json.status==1){
+			showTips(json.msg);
+			$scope.panel={};
+			$scope.panel[nextExtend]=true;
+			console.log($scope.panel);
+			 $('body,html').animate({scrollTop:'0px'},1000);
+		}
+		if(json.miss==1){
+			alert("登录失效了，请重新登录");
+            window.location.href = "welcome.html"/*tpa=http://www.mingchao.com/welcome.html*/;
+		}
+	}
+
+	//增加一条
+	$scope.addRow = function(objKey){
+		var i=0;
+		angular.forEach($scope.info[objKey], function(value,key){
+			i++;
+		});
+		$scope.info[objKey][i]={};
+		console.log($scope.info);
+	}
+
+	//删除一条
+	$scope.delRow = function(objKey,k){
+        if( $scope.info[objKey].length>1) {
+            if (confirm("确定要清空这条数据吗?")) {
+                var newObj = {};
+                var i = 0;
+                angular.forEach($scope.info[objKey], function (value, key) {
+                    if (key != k) newObj[i++] = value;
+                });
+                $scope.info[objKey] = newObj;
+            }
+        }else{
+            alert("至少保留一行数据！");
+        }
+	}
+
+	//提交
+	$scope.submit = function(){
+		if(confirm("确定已经检查通过所有的填写内容作最后提交了吗?")) {
+			console.log($scope.info);
+			mainService.submit({info:$scope.info}).then(function(json) {
+				if(json.status==0){
+					if(json.error) showTips(json.error);
+				}
+				if(json.status==1){
+                    $("#msgModal").modal("show");
+				}
+				if(json.miss==1){
+					alert("登录失效了，请重新登录");
+                    window.location.href = "welcome.html"/*tpa=http://www.mingchao.com/welcome.html*/;
+				}
+			});
+		}
+	}
+});
+		 
+</script>
+	
+</body>
+</html>

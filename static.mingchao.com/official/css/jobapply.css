@@ -1,0 +1,30 @@
+
+body {min-height: 2000px;font-size: 12px;font-family: 微软雅黑;}
+h5{font-family: 微软雅黑;}
+.well{margin:10px 0px;}
+.table tr td,table th,table tr{font-size: 12px;}
+.nav>li>a.nav-brand{padding-top:0;padding-bottom:0;}
+em{color:#ff6600;margin-right:3px;}
+#cleft_box{position:absolute;right:0px;top:400px;padding:0px;margin:0px;overflow:hidden;width:172px;z-index:9999}
+.cleft_inner{margin:0px;padding:0px;overflow:hidden;width:236px}
+#inner_btn{width:36px;height:74px;color:#fff;font-size:14px;font-weight:bold;text-align:center;margin-top:15px;padding-top:35px;cursor:pointer;cursor:pointer;float:left;background:url("../images/campus/rtitleico.png")/*tpa=http://static.mingchao.com/official/images/campus/rtitleico.png*/ left top no-repeat}
+.inner_btn span{layout-flow:vertical-ideographic}
+.inner_info{width:200px;overflow:hidden;float:right;background:none}
+.inner_list{text-align:center;width:200px;height:190px;background:url("../images/campus/contentbg.png")/*tpa=http://static.mingchao.com/official/images/campus/contentbg.png*/ repeat-y}
+.panel-title{font-size: 13px;font-family: 微软雅黑;}
+.passkey{margin-left:5px;}
+#validation{cursor:pointer}
+#ok{color:green;display:none}
+#error{color:red;display:none}
+#codetip{padding: 15px 20px;font-size: 14px;}
+#channel-recommend,#channel-other,#channel-forum{width:300px;float:left;margin-right:8px;}
+#channel-supplement{display:none;}
+.navbar{height:60px;}
+#job-nav-top{box-shadow: 0px 0px 5px #333;margin-bottom: 0px;position: fixed;width: 100%;z-index:9999}
+#nav-top{box-shadow: 0px 0px 5px #333;margin-bottom: 0px;}
+#nav-banner{background:url("../../static/images/campus/msg_top_bg.png")/*tpa=http://static.mingchao.com/static/images/campus/msg_top_bg.png*/ repeat;}
+#msg-tip{width:480px;height:250px;margin:80px auto; background:url("../../static/images/campus/msg_tip.png")/*tpa=http://static.mingchao.com/static/images/campus/msg_tip.png*/;}
+#msg{font-size:16px;font-family: 微软雅黑;padding-top:60px;text-align:center;}
+#title{font-size:18px;font-family: 微软雅黑;font-weight:600;color:#e33;}
+#alert-top{margin-top:80px;}
+#loadValidCode{cursor:pointer;}

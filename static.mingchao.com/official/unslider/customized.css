@@ -1,0 +1,65 @@
+    .unslider-nav {
+        position: absolute;
+        width: 100%;
+        bottom: 2%;
+    }
+    .banner {
+        position: relative;
+        overflow: auto;
+        margin:0px auto;
+    }
+    .banner li {
+        list-style: none;
+    }
+    .banner ul li {
+        float: left;
+        text-align:center;
+    }
+    ul,li,img{
+        border:none;
+        padding:0px;
+    }
+
+    .dots {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 20px;
+        text-align: center;
+    }
+    .dots li {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin: 0 4px;
+        text-indent: -999em;
+        border: 2px solid #fff;
+        background:#FFF;
+        border-radius: 6px;
+        cursor: pointer;
+        -webkit-transition: background .5s, opacity .5s;
+        -moz-transition: background .5s, opacity .5s;
+        transition: background .5s, opacity .5s;
+    }
+    .dots li.active {
+        background: #069;
+        opacity: 1;
+    }
+    .unslider .prev{
+        font-size: 0px;
+        position:absolute;
+        left:5px;
+        margin-top:-300px;
+        background:url("images/pre.png")/*tpa=http://static.mingchao.com/official/unslider/images/pre.png*/ no-repeat;
+        width:41px;
+        height:119px;
+    }
+    .unslider .next{
+        font-size: 0px;
+        position:absolute;
+        right:5px;
+        margin-top:-300px;
+        background:url("images/next.png")/*tpa=http://static.mingchao.com/official/unslider/images/next.png*/ no-repeat;
+        width:41px;
+        height:119px;
+    }
