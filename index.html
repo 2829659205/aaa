@@ -1,0 +1,336 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+	<head>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>深圳融通互动网络技术有限公司</title>
+
+		<link rel="shortcut icon" href="http://static.rose.com/official/images/favicon.ico">
+		<title></title>
+
+		<link href="static.rose.com/official/css/style.css-t=937.css" rel="stylesheet">
+
+		<script type="application/javascript">
+			(function() {
+				var ua = navigator.userAgent.toLowerCase();
+				var isMobile = !!ua.match(/applewebkit.*mobile.*/);
+				var isSpecialMobile = ua.toLowerCase().match(/(ipod|iphone|android|coolpad|mmp|smartphone|midp|wap|xoom|symbian|j2me|blackberry|win ce)/i) != null;
+				isMobile = isSpecialMobile || isMobile;
+				if(isMobile) {
+					var mobileSite = 'http://m.rose.com/';
+					var mobilePath = '';
+					location.href = mobileSite + mobilePath;
+				}
+			})();
+		</script>
+		<script src="static.rose.com/official/js/jquery.js"></script>
+		<script src="static.rose.com/official/js/homepage.js"></script>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				var kv_img = [{
+						"pic": "static.rose.com/official/images/fzzl_banner.jpg",
+						"url": "www.rose.com/mobilegames.html"
+					},
+					{
+						"pic": "static.rose.com/official/images/ljh5_banner.jpg",
+						"url": "www.rose.com/mobilegames.html"
+					},
+					{
+						"pic": "static.rose.com/official/images/zzfx_banner.jpg",
+						"url": "www.rose.com/mobilegames.html"
+					},
+					{
+						"pic": "static.rose.com/official/images/ljxzlogo_new.jpg",
+						"url": "www.rose.com/mobilegames.html"
+					},
+
+				];
+				var kv_icon = [
+					"static.rose.com/official/images/m21_s.jpg.png",
+					"static.rose.com/official/images/m20_s.jpg",
+					"static.rose.com/official/images/m19_s.jpg",
+					"static.rose.com/official/images/m10_s.jpg",
+				];
+				var $kv = $("#mainkv");
+				var kvs1 = [];
+				var kvtime = 5000;
+				var kvlinks = [];
+				var kva = $('#picurl')[0];
+				var kvimg = $("#mainkv img")[0];
+				var $kvbutton;
+				var nowli = 0;
+
+				var delay = 6;
+				var $targetul = $("#kv_button ul").eq(0);
+				$targetul.empty();
+				for(var i = 0; i < kv_img.length; i++) {
+					kvlinks.push(kv_img[i]['url']);
+					kvs1.push(kv_img[i]['pic']);
+					kvtime = 6 * 1000;
+					$targetul.append("<li class='fadeIn'><img width='75px' height='45px' src='" + kv_icon[i] + "'/></li>");
+				}
+				$kvbutton = $("#kv_button li");
+				$targetul.find("li").eq(0).addClass("no fadeOut");
+				$kv.css({
+					"background": "url(" + kvs1[0] + ") no-repeat center 0"
+				});
+
+				function setImgHref(href) {
+					if(kva) {
+						kva.href = href;
+					}
+				}
+				setImgHref(kvlinks[nowli]);
+				if($targetul.find("li").length == 1) {
+					$kvbutton.hide();
+				}
+
+				$("#kv_button li").click(function(e) {
+					e.preventDefault();
+					e.stopPropagation();
+
+					if($kv.is(":animated")) {
+						return;
+					}
+					if($kv[0].interval1) {
+						clearInterval($kv[0].interval1);
+					}
+					var lis = $("#kv_button")[0].getElementsByTagName("li");
+					var whichli = (function(which) {
+						for(var i = 0; i < lis.length; i++) {
+							if(which == lis[i]) {
+								return i;
+							}
+						}
+					})(this);
+					nowli = whichli;
+					setImgHref(kvlinks[nowli]);
+					$kv.fadeOut(700, function() {
+						$kv.css({
+							"background": "url(" + kvs1[nowli] + ") no-repeat center 0"
+						});
+						$kv.fadeIn(700);
+						$kvbutton.eq(nowli).addClass("no fadeOut").siblings().removeClass("no fadeOut");
+						$kv[0].interval1 = setInterval(function() {
+							nowli++;
+							if(nowli > kvs1.length - 1) {
+								nowli = 0;
+							}
+							$("#kv_button li").eq(nowli).addClass("no fadeOut").siblings().removeClass("no fadeOut");
+							setImgHref(kvlinks[nowli]);
+							$kv.fadeOut(700, function() {
+								$kv.css({
+									"background": "url(" + kvs1[nowli] + ") no-repeat center 0"
+								});
+								$kv.fadeIn(700);
+							});
+						}, kvtime);
+						kvstart();
+
+						$("#mainkv").hover(function() {
+							if($kv[0].interval1) {
+								clearInterval($kv[0].interval1)
+							}
+						}, function() {
+							kvstart();
+						});
+					});
+				});
+
+				function kvstart() {
+					if($kv[0].interval1) {
+						clearInterval($kv[0].interval1)
+					}
+					$kv[0].interval1 = setInterval(function() {
+						if($kv.is(":animated")) {
+							return;
+						}
+						nowli++;
+						if(nowli > kvs1.length - 1) {
+							nowli = 0
+						}
+						setImgHref(kvlinks[nowli]);
+						$kvbutton.eq(nowli).addClass("no fadeOut").siblings().removeClass("no fadeOut");
+						$kv.animate({
+							"opacity": 0
+						}, 700, function() {
+							$kv[0].style.background = "url(" + kvs1[nowli] + ") no-repeat center 0";
+							$kv.animate({
+								"opacity": 1
+							}, 700);
+						})
+					}, kvtime);
+				}
+				kvstart();
+			});
+		</script>
+
+		<!--[if lt IE 8]>
+  <script src="static.rose.com/official/js/campus/IE8.js" ></script>
+  <![endif]-->
+
+	</head>
+
+	<body>
+
+		<div id="header">
+			<div id="logo">
+				<img src="static.rose.com/official/images/new-logo.png" alt="MClogo" name="Insert_logo" id="Insert_logo" style="background: #fffff; display:block; background-color: #FFFFFF;" width="465" height="68">
+			</div>
+		</div>
+
+		<div class="topmenu_bg">
+			<div class="topmenu">
+				<div class="nav_content">
+					<ul>
+						<li class="nav-first-li">
+							<div class="nav-link">
+								<a id="m_0" onmouseout="MM_showHideLayers('Layer0','m_0','hide')" onmouseover="MM_showHideLayers('Layer0','m_0','show')" href="index.html">首页</a>
+							</div>
+							<div id="Layer0" class="submenu" onmouseover="MM_showHideLayers('Layer0','m_0','show')" onmouseout="MM_showHideLayers('Layer0','m_0','hide')">
+								<div class="subnav">
+									<ul>
+									</ul>
+									<div style="clear: both"></div>
+								</div>
+							</div>
+						</li>
+						<li class="nav-first-li">
+							<div class="nav-link">
+								<a id="m_13" onmouseout="MM_showHideLayers('Layer13','m_13','hide')" onmouseover="MM_showHideLayers('Layer13','m_13','show')" href="www.rose.com/page/57.html">关于Rose</a>
+							</div>
+						</li>
+						<li class="nav-first-li">
+							<div class="nav-link">
+								<a id="m_15" onmouseout="MM_showHideLayers('Layer15','m_15','hide')" onmouseover="MM_showHideLayers('Layer15','m_15','show')" href="www.rose.com/mobilegames.html">游戏产品</a>
+							</div>
+						</li>
+						<li class="nav-first-li">
+							<div class="nav-link">
+								<a id="m_19" onmouseout="MM_showHideLayers('Layer19','m_19','hide')" onmouseover="MM_showHideLayers('Layer19','m_19','show')" href="www.rose.com/newslist/1.html">资讯动态</a>
+							</div>
+							<div id="Layer19" class="submenu" onmouseover="MM_showHideLayers('Layer19','m_19','show')" onmouseout="MM_showHideLayers('Layer19','m_19','hide')">
+								<div class="subnav">
+									<ul>
+									</ul>
+									<div style="clear: both"></div>
+								</div>
+							</div>
+						</li>
+						<li class="nav-first-li">
+							<div class="nav-link">
+								<a id="m_20" onmouseout="MM_showHideLayers('Layer20','m_20','hide')" onmouseover="MM_showHideLayers('Layer20','m_20','show')" href="www.rose.com/page/26.html">商务合作</a>
+							</div>
+						</li>
+						<li class="nav-first-li">
+							<div class="nav-link">
+								<a id="m_22" onmouseout="MM_showHideLayers('Layer22','m_22','hide')" onmouseover="MM_showHideLayers('Layer22','m_22','show')" target="_blank" href="www.rose.com/jobs/article/85.html">人才招聘</a>
+								<div id="nav_new"><img src="static.rose.com/official/images/hot.gif"></div>
+							</div>
+							<div id="Layer22" class="submenu" onmouseover="MM_showHideLayers('Layer22','m_22','show')" onmouseout="MM_showHideLayers('Layer22','m_22','hide')">
+								<div class="subnav">
+									<ul>
+									</ul>
+									<div style="clear: both"></div>
+								</div>
+							</div>
+						</li>
+						<li class="nav-first-li">
+							<div class="nav-link">
+								<a id="m_23" onmouseout="MM_showHideLayers('Layer23','m_23','hide')" onmouseover="MM_showHideLayers('Layer23','m_23','show')" href="www.rose.com/page/64.html">联系我们</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="clear"></div>
+
+		<div id="mainkv"></div>
+		<div class="mainbnt">
+			<a href="#@" target="_blank" id="picurl"></a>
+			<div id="kv_button">
+				<ul></ul>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="main">
+				<div style="width:100%;height:50px;float:left;">&nbsp;</div>
+				<div class="left">
+					<div id="about">
+						<p style="text-indent:2em;">
+							深圳融通互动网络技术有限公司是一家实力雄厚、发展潜力巨大的网络游戏研发商、运营商、发行商，是广东省高新技术企业，深圳市企业研究开发机构。
+						</p>
+					</div>
+					<div class="more">
+						<p>
+							<a href="www.rose.com/page/57.html">查看更多&gt;&gt;</a>
+						</p>
+					</div>
+				</div>
+				<div class="center" style="position: relative;">
+					<div id="news">
+						<div class="newspass">
+							<ul>
+							</ul>
+						</div>
+					</div>
+					<div class="more">
+						<p>
+							<a href="www.rose.com/newslist/1.html">查看更多&gt;&gt;</a>
+						</p>
+					</div>
+				</div>
+				<div class="right">
+					<div id="job">
+						<ul>
+							<li>
+								<a href="www.rose.com/jobs/article/85.html" title="广告投放专员">广告投放专员 </a>
+							</li>
+							<li>
+								<a href="www.rose.com/jobs/article/85.html" title="游戏运营">游戏运营 </a>
+							</li>
+							<li>
+								<a href="www.rose.com/jobs/article/85.html" title="小程序开发工程师">手游开发工程师 </a>
+							</li>
+							<li>
+								<a href="www.rose.com/jobs/article/85.html" title="PHP开发工程师">PHP开发工程师 </a>
+							</li>
+							<li>
+								<a href="www.rose.com/jobs/article/85.html" title="日系角色原画">UI设计师</a>
+							</li>
+						</ul>
+					</div>
+					<div class="more">
+						<p>
+							<a href="www.rose.com/jobs/article/85.html">查看更多&gt;&gt;</a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="clear"></div>
+
+		</div>
+
+		<div id="footer">
+			<ul>
+				<li class="f1">健康游戏忠告：抵制不良游戏 拒绝盗版游戏 注意自我保护 谨防受骗上当 适度游戏益脑 沉迷游戏伤身 合理安排时间 享受健康生活</li>
+				<li>
+					<a >深圳融通互动网络技术有限公司</a>版权所有
+					<a >粤ICP备14099547号-1</a>
+				</li>
+			</ul>
+			<div id="cleft_box"></div>
+		</div>
+
+	</body>
+
+</html>
